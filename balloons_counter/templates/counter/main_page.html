@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Balloons</title>
+</head>
+<body>
+<h2>How many balloons do you need to lift something into the sky?</h2>
+{% if balloons_count %}
+    <h1>{{ balloons_count }}</h1>
+{% endif %}
+<form action="" method="post">
+    {% csrf_token %}
+    <p><input name="weight" type="number" min="1" value="1">
+        <select size="1" name="measure">
+        <option value="gram" selected>g</option>
+        <option value="kilogram">kg</option>
+        <option value="tonne">t</option>
+    </select></p>
+    <p><input type="submit" value="Отправить"></p>
+</form>
+</body>
+</html>
+
+
+{#<!DOCTYPE HTML>#}
+{#<html>#}
+{#<head>#}
+{#    <title>AJAX</title>#}
+{#    <meta charset="utf-8"/>#}
+{#    <script type="text/javascript" src="jquery.js"></script>#}
+{#    <script type="text/javascript">#}
+{#        function getMeasures() {#}
+{#            $.ajax({#}
+{#                url: 'http://localhost:8000/measures',#}
+{#                type: 'GET',#}
+{#                contentType: false, // важно - убираем форматирование данных по умолчанию#}
+{#                processData: false, // важно - убираем преобразование строк по умолчанию#}
+{#                success: function (resp) {#}
+{#                    return resp;#}
+{#                }#}
+{#            });#}
+{##}
+{#        }#}
+{##}
+{#    </script>#}
+{#</head>#}
+{#<body>#}
+{#<form id="form" method="POST">#}
+{#    {% for task in getMeasures() %}#}
+{#    {% endfor %}#}
+{#    <input id="in1" type="text"/>#}
+{#    <button id="btn">Test</button>#}
+{#</form>#}
+{#<p id="in2"></p>#}
+{#</body>#}
+{#</html>#}
