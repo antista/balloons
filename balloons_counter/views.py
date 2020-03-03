@@ -8,5 +8,5 @@ def main_page(request):
         return render(request, 'counter/main_page.html', {'balloons_count': 1})
     if request.method == 'POST':
         weight = int(request.POST['weight'])
-        measure = request.POST['measure'][0]
+        measure = request.POST['measure']
         return render(request, 'counter/main_page.html', {'balloons_count': counter.count(weight, measure)})

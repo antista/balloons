@@ -1,0 +1,111 @@
+html {
+    background: url("images/sky.jpg") no-repeat;
+    background-size: cover;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+h2 {
+    color: white;
+    font-family: sans-serif;
+    font-size: 35px;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+form input[type=submit] {
+    width: 200px;
+    height: 30px;
+    font-weight: bold;
+}
+
+form input[type=number] {
+    width: 150px;
+    height: 45px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+form select {
+    width: 125px;
+    height: 38px;
+    font-size: 25px;
+}
+
+.balloons-count {
+    font-size: 140px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.balloons-container {
+    z-index: -1;
+    width: 100vw;
+    height: calc(100vh - 100px);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.balloon {
+    content: "";
+    width: 150px;
+    height: 400px;
+    /*border: 2px red solid;*/
+    background-size: cover;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+
+}
+
+.balloon:nth-child(3n-2) {
+    animation-name: move1;
+    animation-duration: 5s;
+}
+
+.balloon:nth-child(3n-1) {
+    animation-name: move2;
+    animation-duration: 6s;
+}
+
+.balloon:nth-child(3n) {
+    animation-name: move3;
+    animation-duration: 5s;
+}
+
+@keyframes move1 {
+    0%, 100% {
+        transform: translateY(25px);
+    }
+    50% {
+        transform: translateY(-25px);
+    }
+}
+
+@keyframes move2 {
+    0%, 100% {
+        transform: translateY(-20px);
+    }
+    50% {
+        transform: translateY(30px);
+    }
+}
+
+@keyframes move3 {
+    0%, 100% {
+        transform: translateY(-30px);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
