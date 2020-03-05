@@ -35,7 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'balloons_counter.apps.CounterConfig',
+    'balloons_counter',
 ]
 
 MIDDLEWARE = [

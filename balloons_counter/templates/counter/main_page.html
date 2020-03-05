@@ -9,24 +9,39 @@
 
 <body>
 <h2>How many balloons would it take to lift something into the sky?</h2>
-{% if balloons_count %}
-    <p class="balloons-count">{{ balloons_count }}</p>
-    <div class="balloons-container">
-        <div class="balloon"
-             style="background: url(static/styles/images/balloons/orange_balloon.png); background-size: cover;"></div>
-        <div class="balloon"
-             style="background: url(static/styles/images/balloons/green_balloon.png); background-size: cover;"></div>
-        <div class="balloon"
-             style="background: url(static/styles/images/balloons/pink_balloon.png); background-size: cover;"></div>
-        <div class="balloon"
-             style="background: url(static/styles/images/balloons/yellow_balloon.png); background-size: cover;"></div>
-        <div class="balloon"
-             style="background: url(static/styles/images/balloons/blue_balloon.png); background-size: cover;"></div>
-        <div class="balloon"
-             style="background: url(static/styles/images/balloons/red_balloon.png); background-size: cover;"></div>
+{% if current_value and balloons_count %}
+    <div class="current-values">
+        <p>To lift {{ current_value.weight }} {{ current_value.measure }} into the sky you need</p>
+        <p class="balloons-count">{{ balloons_count }}</p>
+        <p>balloons</p>
     </div>
-
 {% endif %}
+<div class="balloons-container">
+    <div class="balloon"
+         style="background: url(static/styles/images/balloons/orange_balloon.png); background-size: cover;"></div>
+    <div class="balloon"
+         style="background: url(static/styles/images/balloons/green_balloon.png); background-size: cover;"></div>
+    <div class="balloon"
+         style="background: url(static/styles/images/balloons/pink_balloon.png); background-size: cover;"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"
+         style="background: url(static/styles/images/balloons/yellow_balloon.png); background-size: cover;"></div>
+    <div class="balloon"
+         style="background: url(static/styles/images/balloons/blue_balloon.png); background-size: cover;"></div>
+    <div class="balloon"
+         style="background: url(static/styles/images/balloons/red_balloon.png); background-size: cover;"></div>
+</div>
+<div class="examples">
+    {% for example in examples %}
+        <div class="example-card">
+            <a href="{{ example.name }}"><img src="{{ example.image }}" alt="{{ example.name }}"></a>
+
+        </div>
+    {% endfor %}
+</div>
+
 <form action="" method="post">
     {% csrf_token %}
     <p><input name="weight" type="number" min="1" value="1">

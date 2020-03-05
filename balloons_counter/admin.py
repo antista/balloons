@@ -1,3 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
+from balloons_counter.models import Entity
+
+admin.site.register(Entity)
