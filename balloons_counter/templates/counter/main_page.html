@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Balloons</title>
-    <link rel="stylesheet" type="text/css" href="static/styles/index.css">
-    <link rel="shortcut icon" type="image/png" href="static/styles/images/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="/static/styles/index.css">
+    <link rel="shortcut icon" type="image/png" href="/static/styles/images/favicon.ico"/>
 </head>
 
 <body>
@@ -18,31 +18,31 @@
 {% endif %}
 <div class="balloons-container">
     <div class="balloon"
-         style="background: url(static/styles/images/balloons/orange_balloon.png); background-size: cover;"></div>
+         style="background: url(/static/styles/images/balloons/orange_balloon.png); background-size: cover;"></div>
     <div class="balloon"
-         style="background: url(static/styles/images/balloons/green_balloon.png); background-size: cover;"></div>
+         style="background: url(/static/styles/images/balloons/green_balloon.png); background-size: cover;"></div>
     <div class="balloon"
-         style="background: url(static/styles/images/balloons/pink_balloon.png); background-size: cover;"></div>
+         style="background: url(/static/styles/images/balloons/pink_balloon.png); background-size: cover;"></div>
     <div class="balloon"></div>
     <div class="balloon"></div>
     <div class="balloon"></div>
     <div class="balloon"
-         style="background: url(static/styles/images/balloons/yellow_balloon.png); background-size: cover;"></div>
+         style="background: url(/static/styles/images/balloons/yellow_balloon.png); background-size: cover;"></div>
     <div class="balloon"
-         style="background: url(static/styles/images/balloons/blue_balloon.png); background-size: cover;"></div>
+         style="background: url(/static/styles/images/balloons/blue_balloon.png); background-size: cover;"></div>
     <div class="balloon"
-         style="background: url(static/styles/images/balloons/red_balloon.png); background-size: cover;"></div>
+         style="background: url(/static/styles/images/balloons/red_balloon.png); background-size: cover;"></div>
 </div>
 <div class="examples">
     {% for example in examples %}
         <div class="example-card">
-            <a href="{{ example.name }}"><img src="{{ example.image }}" alt="{{ example.name }}"></a>
-
+            <a href="/example/{{ example.name }}"><img src="{{ example.image }}" alt="{{ example.name }}"
+                                                       title="{{ example.name }} ({{ example.weight }} gram)"></a>
         </div>
     {% endfor %}
 </div>
 
-<form action="" method="post">
+<form action="{% url 'main_page' %}" method="post">
     {% csrf_token %}
     <p><input name="weight" type="number" min="1" value="1">
         <select size="1" name="measure">

@@ -3,7 +3,7 @@ import math
 import balloons_counter.constants as const
 
 
-def count(weight, measure='gram'):
+def count(weight, measure=const.DEFAULT_MEASURE):
     if measure == "gram":
         return math.ceil(weight / const.BALLOON_CARRYING)
     elif measure == "kilogram":

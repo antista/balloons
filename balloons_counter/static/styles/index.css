@@ -56,8 +56,28 @@ form select {
     font-size: 25px;
 }
 
-.examples{
+.examples {
     position: absolute;
+    width: 550px;
+    height: 170px;
+    overflow-y: auto;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.example-card a {
+    width: 200px;
+    height: 160px;
+    overflow: hidden;
+}
+
+.example-card a img {
+    width: 140px;
+    height: 140px;
+    object-fit: contain;
+    /*border: 2px red solid;*/
 }
 
 .balloons-container {
